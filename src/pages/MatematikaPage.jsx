@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, Route } from "react-router-dom";
-import "../CSS/matematika.css";
+import "../CSS/Matematika.css";
 import Leaderbotmm from "../components/LeaderbotMatematika.jsx";
 import KuisPage from "./KuisPage";
+import Navbarapp from "../components/Navbarapp.jsx";
 
 function MatematikaPage() {
   const [materiData, setMateriData] = useState(null);
@@ -35,18 +36,25 @@ function MatematikaPage() {
     if (materi && materi.Content) {
       const apiUrl = `http://localhost:3000/materi/download/${materi.Content}`;
       window.location.href = apiUrl;
+      console.log(
+        "Click on materi title. To download, please right-click and choose 'Save Link As'."
+      );
+
+      // Optionally, you can keep the code below to log the materi details
+      console.log("Materi details:", materi);
     }
   };
 
   return (
     <div>
+      <Navbarapp />
       <Leaderbotmm />
       {materiData ? (
         <div>
           <h1>{materiData.Title}</h1>
           <p
-          // onClick={handleMateriTitleClick(materiData)}
-          // style={{ cursor: "pointer" }}
+            onClick={() => handleMateriTitleClick(materiData)}
+            style={{ cursor: "pointer" }}
           >
             {materiData.Content}
           </p>
@@ -58,8 +66,8 @@ function MatematikaPage() {
                 <div key={child.Name}>
                   <h3>{child.Title}</h3>
                   <p
-                  // onClick={handleMateriTitleClick(child)}
-                  // style={{ cursor: "pointer" }}
+                    onClick={() => handleMateriTitleClick(child)}
+                    style={{ cursor: "pointer" }}
                   >
                     {child.Content}
                   </p>

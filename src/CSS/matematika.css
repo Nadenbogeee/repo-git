@@ -1,0 +1,92 @@
+/* Matematika.css */
+
+/* Container styles */
+.matematika-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styles */
+.matematika-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Subtitle styles */
+.matematika-container h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #555;
+  text-align: left;
+}
+
+/* Content styles */
+.matematika-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+  text-align: left;
+}
+
+/* Quiz link styles */
+.matematika-container .quiz-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.matematika-container .quiz-item img {
+  width: 40px;
+  margin-right: 15px;
+}
+
+.matematika-container .quiz-item-details {
+  flex: 1;
+}
+
+.matematika-container .quiz-item-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.matematika-container .quiz-item-info {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Loading message styles */
+.matematika-container .matematika-loading-message {
+  font-style: italic;
+  color: #888;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .matematika-container {
+    margin: 20px auto;
+    padding: 15px;
+  }
+  
+  .matematika-container h1 {
+    font-size: 2.5rem;
+  }
+  
+  .matematika-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .matematika-container p {
+    font-size: 1rem;
+  }
+}

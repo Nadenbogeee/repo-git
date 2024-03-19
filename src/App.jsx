@@ -14,7 +14,9 @@ import IpaPage from "./pages/IpaPage";
 import IpsPage from "./pages/IpsPage";
 import PknPage from "./pages/PknPage";
 import BahasaPage from "./pages/BahasaPage";
-
+import tambahUser from "./pages/tambahUser";
+import tambahKuis from "./components/tambahKuis";
+import hapusUser from "./pages/hapusUser";
 function App() {
   return (
     <div>
@@ -30,6 +32,9 @@ function App() {
         <Route path="/Ips" Component={IpsPage} />
         <Route path="/Pkn" Component={PknPage} />
         <Route path="/Bahasa" Component={BahasaPage} />
+        <Route path="/Tambah" Component={tambahUser} />
+        <Route path="/TambahKuis" Component={tambahKuis} />
+        <Route path="/Hapus" Component={hapusUser} />
       </Routes>
     </div>
   );

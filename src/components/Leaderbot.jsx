@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import banner from "../assets/bannerKeren.png";
 import rank1 from "../assets/rank1.png";
 import rank2 from "../assets/rank2.png";
 import rank3 from "../assets/rank3.png";
 import rank from "../assets/rank.png";
-import banner from "../assets/bannerKeren.png";
 
 const Leaderbot = () => {
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -16,7 +16,11 @@ const Leaderbot = () => {
     try {
       const response = await fetch("http://localhost:3000/quiz/leaderboard");
       const data = await response.json();
-      setLeaderboardData(data.body);
+      // Sort the data based on TotalScore in descending order
+      const sortedData = data.body.sort((a, b) => b.TotalScore - a.TotalScore);
+      // Take only the top 10 entries
+      const top10Data = sortedData.slice(0, 10);
+      setLeaderboardData(top10Data);
     } catch (error) {
       console.error("Error fetching leaderboard data", error);
     }
@@ -29,78 +33,25 @@ const Leaderbot = () => {
       </div>
       <br />
       <div className="containerTambah">
-        <div className="pembungkus1">
-          <div className="tempat1">
-            <div className="badgeSiswa1">
-              <img src={rank1} alt="" />
+        {leaderboardData.map((item, index) => (
+          <div className={`tempat${index + 1}`} key={index}>
+            <div className={`badgeSiswa${index + 1}`}>
+              {index === 0 && <img src={rank1} alt="" />}
+              {index === 1 && <img src={rank2} alt="" />}
+              {index === 2 && <img src={rank3} alt="" />}
+              {index == 3 && <img src={rank} alt="" />}
+              {index == 4 && <img src={rank} alt="" />}
+              {index == 5 && <img src={rank} alt="" />}
+              {index == 6 && <img src={rank} alt="" />}
+              {index == 7 && <img src={rank} alt="" />}
+              {index == 8 && <img src={rank} alt="" />}
+              {index == 9 && <img src={rank} alt="" />}
+              {index == 10 && <img src={rank} alt="" />}
             </div>
-            <div className="namaSiswa1">Denys naidu</div>
-            <div className="scoreMapel1">92</div>
+            <div className={`namaSiswa${index + 1}`}>{item.CreatedBy}</div>
+            <div className={`scoreMapel${index + 1}`}>{item.TotalScore}</div>
           </div>
-        </div>
-        <div className="tempat2">
-          <div className="badgeSiswa2">
-            <img src={rank2} alt="" />
-          </div>
-          <div className="namaSiswa2">Satya Prakash</div>
-          <div className="scoreMapel2">91</div>
-        </div>
-        <div className="tempat3">
-          <div className="badgeSiswa3">
-            <img src={rank3} alt="" />
-          </div>
-          <div className="namaSiswa3">Yoga naden</div>
-          <div className="scoreMapel3">90</div>
-        </div>
-        <div className="tempat4">
-          <div className="badgeSiswa4">
-            <img src={rank} alt="" />
-          </div>
-          <div className="namaSiswa4">Yoga naden</div>
-          <div className="scoreMapel4">90</div>
-        </div>
-        <div className="tempat4">
-          <div className="badgeSiswa4">
-            <img src={rank} alt="" />
-          </div>
-          <div className="namaSiswa4">Yoga naden</div>
-          <div className="scoreMapel4">90</div>
-        </div>
-        <div className="tempat4">
-          <div className="badgeSiswa4">
-            <img src={rank} alt="" />
-          </div>
-          <div className="namaSiswa4">Yoga naden</div>
-          <div className="scoreMapel4">90</div>
-        </div>
-        <div className="tempat4">
-          <div className="badgeSiswa4">
-            <img src={rank} alt="" />
-          </div>
-          <div className="namaSiswa4">Yoga naden</div>
-          <div className="scoreMapel4">90</div>
-        </div>
-        <div className="tempat4">
-          <div className="badgeSiswa4">
-            <img src={rank} alt="" />
-          </div>
-          <div className="namaSiswa4">Yoga naden</div>
-          <div className="scoreMapel4">90</div>
-        </div>
-        <div className="tempat4">
-          <div className="badgeSiswa4">
-            <img src={rank} alt="" />
-          </div>
-          <div className="namaSiswa4">Yoga naden</div>
-          <div className="scoreMapel4">90</div>
-        </div>
-        <div className="tempat4">
-          <div className="badgeSiswa4">
-            <img src={rank} alt="" />
-          </div>
-          <div className="namaSiswa4">Yoga naden</div>
-          <div className="scoreMapel4">90</div>
-        </div>
+        ))}
       </div>
     </div>
   );

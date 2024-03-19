@@ -1,81 +1,127 @@
 import React from "react";
-import math from "../assets/Math1.jpg";
-import ipa from "../assets/microscope.png";
-import bi from "../assets/open-book.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import gambarMMapel from "../assets/Pkn.jpg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css";
+import math from "../assets/Math6.jpg";
+import openBook from "../assets/Bi5.jpg";
+import ips from "../assets/ips5.jpg";
+import pkn from "../assets/pkn5.jpg";
+import ipa from "../assets/ipa8.jpg";
 
 const MenuMapel = () => {
   return (
-    <Container fluid>
+    <Container fluid className="custom-container">
       <Row>
         <div className="mapelBanner"></div>
       </Row>
       <Row className="BarisMapel">
-        <div className="mataPelajaranSekolah">
-          {/* card 1 */}
-          <div className="cardMapel1">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={gambarMMapel} />
-              <Card.Body>
-                <Card.Title>MATEMATIKA</Card.Title>
-                {/* <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text> */}
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          {/* card 2 */}
-          <div className="cardMapel2">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={gambarMMapel} />
-              <Card.Body>
-                <Card.Title>IPA</Card.Title>
-                {/* <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text> */}
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          {/* card 3 */}
-          <div className="cardMapel3">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={gambarMMapel} />
-              <Card.Body>
-                <Card.Title>IPS</Card.Title>
-                {/* <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text> */}
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          {/* card 4 */}
-          <div className="cardMapel4">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={gambarMMapel} />
-              <Card.Body>
-                <Card.Title>BAHASA INDONESIA</Card.Title>
-                {/* <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text> */}
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          {/* card 5 */}
-          <div className="cardMapel5">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={gambarMMapel} />
-              <Card.Body>
-                <Card.Title>PPKNM</Card.Title>
-                {/* <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text> */}
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </div>
+        <div className="container3">
+          <Swiper
+            modules={[Navigation, Pagination, A11y, Autoplay]}
+            spaceBetween={35}
+            slidesPerView={"3"}
+            autoplay={{
+              delay: 4500,
+            }}
+            pagination={{ clickable: true }}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <div className="mapel1">
+                <div className="gambar">
+                  <img src={math} alt="" />
+                </div>
+                <div className="text">
+                  <h2>Matematika</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Voluptate rerum et tempore corrupti dolore saepe.
+                  </p>
+                </div>
+                <div className="buttonGo">
+                  <a href="/Matematika">Start</a>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="mapel1">
+                <div className="gambar">
+                  <img src={ipa} alt="" />
+                </div>
+                <div className="text">
+                  <h2>IPA</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Voluptate rerum et tempore corrupti dolore saepe.
+                  </p>
+                </div>
+                <div className="buttonGo">
+                  <a href="">Start</a>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="mapel1">
+                <div className="gambar">
+                  <img src={ips} alt="" />
+                </div>
+                <div className="text">
+                  <h2>IPS</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Voluptate rerum et tempore corrupti dolore saepe.
+                  </p>
+                </div>
+                <div className="buttonGo">
+                  <a href="">Start</a>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="mapel1">
+                <div className="gambar">
+                  <img src={openBook} alt="" />
+                </div>
+                <div className="text">
+                  <h2>Bahasa Indonesia</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Voluptate rerum et tempore corrupti dolore saepe.
+                  </p>
+                </div>
+                <div className="buttonGo">
+                  <a href="">Start</a>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="mapel1">
+                <div className="gambar">
+                  <img src={pkn} alt="" />
+                </div>
+                <div className="text">
+                  <h2>PPKN</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Voluptate rerum et tempore corrupti dolore saepe.
+                  </p>
+                </div>
+                <div className="buttonGo">
+                  <a href="">Start</a>
+                </div>
+              </div>
+            </SwiperSlide>
+            {/* Add more SwiperSlides for additional subjects */}
+          </Swiper>
         </div>
       </Row>
     </Container>

@@ -99,82 +99,85 @@ const KuisPage = () => {
     } catch (error) {
       console.error("Error submitting quiz:", error);
     }
+    window.location.href = "/Kelas";
   };
 
   return (
-    <div className="quiz-container">
-      {quizData && quizData.quizQuestions.length > 0 ? (
-        <div>
-          <h1>{quizData.Title}</h1>
-          <p>
-            Question {currentQuestionIndex + 1} of{" "}
-            {quizData.quizQuestions.length}
-          </p>
-          <form onSubmit={handleSubmit}>
-            {quizData.quizQuestions.map((question, index) => (
-              <div
-                key={question.Id}
-                style={{
-                  display: index === currentQuestionIndex ? "block" : "none",
-                }}
-              >
-                <p className="quiz-question">{question.Question}</p>
-                <ul className="quiz-options">
-                  {question.quizQuestionDetails.map(option => (
-                    <li
-                      key={option.Id}
-                      className={`quiz-option ${
-                        isOptionSelected(question.Id, option.Id)
-                          ? "selected"
-                          : ""
+    <div className="border">
+      <div className="quiz-container">
+        {quizData && quizData.quizQuestions.length > 0 ? (
+          <div>
+            <h1>{quizData.Title}</h1>
+            <p>
+              Question {currentQuestionIndex + 1} of{" "}
+              {quizData.quizQuestions.length}
+            </p>
+            <form onSubmit={handleSubmit}>
+              {quizData.quizQuestions.map((question, index) => (
+                <div
+                  key={question.Id}
+                  style={{
+                    display: index === currentQuestionIndex ? "block" : "none",
+                  }}
+                >
+                  <p className="quiz-question">{question.Question}</p>
+                  <ul className="quiz-options">
+                    {question.quizQuestionDetails.map(option => (
+                      <li
+                        key={option.Id}
+                        className={`quiz-option ${
+                          isOptionSelected(question.Id, option.Id)
+                            ? "selected"
+                            : ""
+                        }`}
+                      >
+                        <label>
+                          <input
+                            type="radio"
+                            name={`question_${question.Id}`}
+                            value={option.Id}
+                            onChange={() =>
+                              handleOptionChange(question.Id, option.Id)
+                            }
+                          />
+                          {option.Description}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                  {question.isCorrect !== undefined && (
+                    <p
+                      className={`quiz-feedback ${
+                        question.isCorrect ? "" : "incorrect"
                       }`}
                     >
-                      <label>
-                        <input
-                          type="radio"
-                          name={`question_${question.Id}`}
-                          value={option.Id}
-                          onChange={() =>
-                            handleOptionChange(question.Id, option.Id)
-                          }
-                        />
-                        {option.Description}
-                      </label>
-                    </li>
-                  ))}
-                </ul>
-                {question.isCorrect !== undefined && (
-                  <p
-                    className={`quiz-feedback ${
-                      question.isCorrect ? "" : "incorrect"
-                    }`}
-                  >
-                    {question.isCorrect ? "Correct" : "Incorrect"}
-                  </p>
+                      {question.isCorrect ? "Correct" : "Incorrect"}
+                    </p>
+                  )}
+                </div>
+              ))}
+              <div className="quiz-nav-buttons">
+                {currentQuestionIndex > 0 && (
+                  <button type="button" onClick={handlePrevious}>
+                    Previous
+                  </button>
+                )}
+                {currentQuestionIndex === quizData.quizQuestions.length - 1 ? (
+                  <button className="quiz-submit-button" type="submit">
+                    Submit
+                  </button>
+                ) : (
+                  <button type="button" onClick={handleNext}>
+                    Next
+                  </button>
                 )}
               </div>
-            ))}
-            <div className="quiz-nav-buttons">
-              {currentQuestionIndex > 0 && (
-                <button type="button" onClick={handlePrevious}>
-                  Previous
-                </button>
-              )}
-              {currentQuestionIndex === quizData.quizQuestions.length - 1 ? (
-                <button className="quiz-submit-button" type="submit">
-                  Submit
-                </button>
-              ) : (
-                <button type="button" onClick={handleNext}>
-                  Next
-                </button>
-              )}
-            </div>
-          </form>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+            </form>
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </div>
   );
 };

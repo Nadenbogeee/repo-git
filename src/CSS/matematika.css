@@ -77,16 +77,259 @@
     margin: 20px auto;
     padding: 15px;
   }
-  
+
   .matematika-container h1 {
     font-size: 2.5rem;
   }
-  
+
   .matematika-container h2 {
     font-size: 1.8rem;
   }
-  
+
   .matematika-container p {
     font-size: 1rem;
   }
+}
+
+/* .satu,
+.dua,
+.tiga,
+.empat,
+.lima {
+  border: 2px solid red;
+} */
+
+.satu {
+  /* border: 20px solid black; */
+  height: 100vh;
+}
+.dua {
+  /* border: 2px solid red; */
+}
+/* .tiga {
+  border: 2px solid red;
+} */
+.empatDua {
+  /* border: 20px solid green; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.empat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  /* border: 30px solid red; */
+}
+
+h1 {
+  text-align: center;
+}
+
+.enam {
+  height: 200vh;
+  background-image: url(../assets/backgroundMatematika2.png);
+  background-size: cover;
+  background-position: center center;
+}
+
+.gambar {
+  height: 5vh;
+  width: 5vw;
+}
+
+.gambarKKuis {
+  /*border: 2px solid red;
+  */
+  height: 100vh;
+  width: 100vw;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+/* testing */
+.testingdesainbox {
+  /* border: 2px solid red; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* gap: 5rem; */
+}
+
+.boxPertama {
+  width: 55vw;
+  height: 16vh;
+  /*border: 2px solid purple;
+  */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+  margin: 1rem;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.boxDua {
+  width: 70vw;
+  height: 11vh;
+  border: 2px solid purple;
+}
+.boxTiga {
+  width: 70vw;
+  height: 11vh;
+  border: 2px solid purple;
+}
+.boxEmpat {
+  width: 70vw;
+  height: 11vh;
+  border: 2px solid purple;
+}
+.boxLima {
+  width: 70vw;
+  height: 11vh;
+  border: 2px solid purple;
+}
+.boxEnam {
+  width: 70vw;
+  height: 11vh;
+  border: 2px solid purple;
+}
+
+.kotakGambar {
+  width: 5vh;
+  width: 5vw;
+  /* border: 2px solid red; */
+}
+
+.kotakText {
+  /* border: 2px solid red; */
+  height: fit-content;
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+.pTimeLimit {
+  /* border: 2px solid red; */
+}
+.pKuisTitle {
+  /* border: 2px solid red; */
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* ----------------------------------------------------------- */
+/* hero section */
+
+/* judul materi testing */
+.judulHeadline {
+  border: 2px solid red;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headLine {
+  /* border: 2px solid purple; */
+  background-image: url("../assets/backgroundMatematika.png");
+  width: 70%;
+  height: 50%;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loremLimaPuluh {
+  height: auto;
+  width: 50%;
+  color: white;
+}
+
+.materidataTitle {
+  border: 2px solid red;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+
+/* bagian bawah hero section */
+
+.childrenMateri {
+  /* border: 2px solid purple; */
+  display: flex;
+  width: 70%;
+  height: 25%;
+  justify-content: center;
+  align-items: center;
+}
+
+.pChildTitikTitle {
+  /* border: 2px solid red; */
+  width: 10vw;
+  height: 10vh;
+}
+
+.gataulaPusing {
+  border: 2px solid white;
+}
+
+.subSib {
+  /* border: 2px solid red; */
+  background-image: url("../assets/backgroundMatematika.png");
+  color: white;
+  border-radius: 40px;
+  margin-top: 3rem;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+.haha {
+  /* border: 20px solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonBagianbawah {
+  /* border: 2px solid red; */
+  margin-top: 3rem;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
